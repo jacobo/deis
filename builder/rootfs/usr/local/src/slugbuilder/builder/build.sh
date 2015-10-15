@@ -123,14 +123,15 @@ else
 fi
 
 if [[ -n "$selected_buildpack" ]]; then
+    echo_title "Intentionally tiny timeout fails, right?"
     echo_title "$buildpack_name app detected"
 else
     echo_title "Unable to select a buildpack"
     exit 1
 fi
 
-export CURL_CONNECT_TIMEOUT="30"
-export CURL_TIMEOUT="180"
+export CURL_CONNECT_TIMEOUT="1"
+export CURL_TIMEOUT="3"
 
 ## Buildpack compile
 
